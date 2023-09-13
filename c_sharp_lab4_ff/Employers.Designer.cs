@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.adressBox = new System.Windows.Forms.TextBox();
+            this.activityBox = new System.Windows.Forms.TextBox();
+            this.save_button = new System.Windows.Forms.Button();
+            this.PhoneBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -76,54 +76,55 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Вид деятельности:";
             // 
-            // textBox1
+            // NameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 4;
+            this.NameBox.Location = new System.Drawing.Point(167, 34);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(100, 23);
+            this.NameBox.TabIndex = 4;
             // 
-            // textBox2
+            // adressBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 5;
+            this.adressBox.Location = new System.Drawing.Point(167, 69);
+            this.adressBox.Name = "adressBox";
+            this.adressBox.Size = new System.Drawing.Size(100, 23);
+            this.adressBox.TabIndex = 5;
             // 
-            // textBox3
+            // activityBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 6;
+            this.activityBox.Location = new System.Drawing.Point(167, 149);
+            this.activityBox.Name = "activityBox";
+            this.activityBox.Size = new System.Drawing.Size(100, 23);
+            this.activityBox.TabIndex = 7;
             // 
-            // textBox4
+            // save_button
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 149);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 7;
+            this.save_button.Location = new System.Drawing.Point(167, 198);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(100, 27);
+            this.save_button.TabIndex = 8;
+            this.save_button.Text = "Сохранить";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // PhoneBox
             // 
-            this.button1.Location = new System.Drawing.Point(167, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 27);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PhoneBox.Location = new System.Drawing.Point(167, 116);
+            this.PhoneBox.Mask = "(999) 000-0000";
+            this.PhoneBox.Name = "PhoneBox";
+            this.PhoneBox.Size = new System.Drawing.Size(100, 23);
+            this.PhoneBox.TabIndex = 9;
             // 
             // Employers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 245);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PhoneBox);
+            this.Controls.Add(this.save_button);
+            this.Controls.Add(this.activityBox);
+            this.Controls.Add(this.adressBox);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,10 +143,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
+        private TextBox NameBox;
+        private TextBox adressBox;
+        private TextBox activityBox;
+        private Button save_button;
+        private MaskedTextBox PhoneBox;
     }
 }

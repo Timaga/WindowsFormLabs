@@ -27,19 +27,19 @@ namespace c_sharp_lab4_ff
         {
             InitializeComponent();
             Employer = employer;
-            textBox1.Text = Employer.Name;
-            textBox2.Text = Employer.PhoneNumber;
-            textBox3.Text = Employer.Activity;
+            NameBox.Text = Employer.Name;
+           PhoneBox.Text = Employer.PhoneNumber;
+            activityBox.Text = Employer.Activity;
 
-            textBox4.Text = Employer.Adress;
+            activityBox.Text = Employer.Adress;
            
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Employer.Name = textBox1.Text;
-            Employer.PhoneNumber = textBox3.Text;
-            Employer.Activity = textBox4.Text;
-            Employer.Adress=textBox2.Text;
+            Employer.Name = NameBox.Text;
+            Employer.PhoneNumber = PhoneBox.Text;
+            Employer.Activity = activityBox.Text;
+            Employer.Adress=adressBox.Text;
         }
 
         private void Employers_Load(object sender, EventArgs e)

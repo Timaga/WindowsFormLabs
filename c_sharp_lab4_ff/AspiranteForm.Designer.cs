@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.SecondNameBox = new System.Windows.Forms.TextBox();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.Qualification_box = new System.Windows.Forms.TextBox();
+            this.activityBox = new System.Windows.Forms.TextBox();
+            this.OthereData_Box = new System.Windows.Forms.TextBox();
+            this.pay = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,69 +43,69 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pay)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // SecondNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.SecondNameBox.Location = new System.Drawing.Point(129, 36);
+            this.SecondNameBox.Name = "SecondNameBox";
+            this.SecondNameBox.Size = new System.Drawing.Size(100, 23);
+            this.SecondNameBox.TabIndex = 0;
+            this.SecondNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // FirstNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.FirstNameBox.Location = new System.Drawing.Point(129, 78);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(100, 23);
+            this.FirstNameBox.TabIndex = 1;
+            this.FirstNameBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // LastNameBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.LastNameBox.Location = new System.Drawing.Point(129, 127);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(100, 23);
+            this.LastNameBox.TabIndex = 2;
+            this.LastNameBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // Qualification_box
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 177);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.Qualification_box.Location = new System.Drawing.Point(129, 177);
+            this.Qualification_box.Name = "Qualification_box";
+            this.Qualification_box.Size = new System.Drawing.Size(100, 23);
+            this.Qualification_box.TabIndex = 3;
+            this.Qualification_box.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // activityBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(129, 231);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.activityBox.Location = new System.Drawing.Point(129, 231);
+            this.activityBox.Name = "activityBox";
+            this.activityBox.Size = new System.Drawing.Size(100, 23);
+            this.activityBox.TabIndex = 4;
+            this.activityBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // OthereData_Box
             // 
-            this.textBox6.Location = new System.Drawing.Point(129, 281);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 23);
-            this.textBox6.TabIndex = 5;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.OthereData_Box.Location = new System.Drawing.Point(129, 281);
+            this.OthereData_Box.Name = "OthereData_Box";
+            this.OthereData_Box.Size = new System.Drawing.Size(100, 23);
+            this.OthereData_Box.TabIndex = 5;
+            this.OthereData_Box.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // numericUpDown1
+            // pay
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(129, 331);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.pay.Location = new System.Drawing.Point(129, 331);
+            this.pay.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown1.TabIndex = 6;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.pay.Name = "pay";
+            this.pay.Size = new System.Drawing.Size(120, 23);
+            this.pay.TabIndex = 6;
+            this.pay.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label1
             // 
@@ -200,17 +200,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pay);
+            this.Controls.Add(this.OthereData_Box);
+            this.Controls.Add(this.activityBox);
+            this.Controls.Add(this.Qualification_box);
+            this.Controls.Add(this.LastNameBox);
+            this.Controls.Add(this.FirstNameBox);
+            this.Controls.Add(this.SecondNameBox);
             this.Name = "AspiranteForm";
             this.Text = "Aspirante";
             this.Load += new System.EventHandler(this.AspiranteForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,13 +218,13 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private NumericUpDown numericUpDown1;
+        private TextBox SecondNameBox;
+        private TextBox FirstNameBox;
+        private TextBox LastNameBox;
+        private TextBox Qualification_box;
+        private TextBox activityBox;
+        private TextBox OthereData_Box;
+        private NumericUpDown pay;
         private Label label1;
         private Label label2;
         private Label label3;

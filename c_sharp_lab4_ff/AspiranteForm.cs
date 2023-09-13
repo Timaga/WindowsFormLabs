@@ -24,13 +24,13 @@ namespace c_sharp_lab4_ff
         {
             InitializeComponent();
             Aspirante = aspirante;
-            textBox1.Text = Aspirante.SecondName;
-            textBox2.Text = Aspirante.FirstName;
-            textBox3.Text = Aspirante.LastName;
-            textBox4.Text = Aspirante.Qualification;
-            textBox5.Text = Aspirante.Activity;
-            textBox6.Text = Aspirante.OthereData;
-            numericUpDown1.Value = Aspirante.Wage;
+            SecondNameBox.Text = Aspirante.SecondName;
+            FirstNameBox.Text = Aspirante.FirstName;
+            LastNameBox.Text = Aspirante.LastName;
+            Qualification_box.Text = Aspirante.Qualification;
+            activityBox.Text = Aspirante.Activity;
+            OthereData_Box.Text = Aspirante.OthereData;
+            pay.Value = Aspirante.Wage;
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -109,13 +109,13 @@ namespace c_sharp_lab4_ff
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Aspirante.FirstName = textBox1.Text;
-            Aspirante.Wage = (int)numericUpDown1.Value;
-            Aspirante.SecondName= textBox2.Text;
-            Aspirante.LastName= textBox3.Text;
-            Aspirante.Qualification= textBox4.Text;
-            Aspirante.Activity= textBox5.Text;
-            Aspirante.OthereData= textBox6.Text;
+            Aspirante.FirstName = SecondNameBox.Text;
+            Aspirante.Wage = (int)pay.Value;
+            Aspirante.SecondName= FirstNameBox.Text;
+            Aspirante.LastName= LastNameBox.Text;
+            Aspirante.Qualification= Qualification_box.Text;
+            Aspirante.Activity= activityBox.Text;
+            Aspirante.OthereData= OthereData_Box.Text;
         }
     }
 }
