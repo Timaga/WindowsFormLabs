@@ -32,13 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EmployerBox = new System.Windows.Forms.ComboBox();
             this.AspiranteBox = new System.Windows.Forms.ComboBox();
-            this.dolzjnostBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CommissionUpDown = new System.Windows.Forms.NumericUpDown();
-            this.dataTimeBegin = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.dolzhBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CommissionUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +65,7 @@
             this.EmployerBox.Name = "EmployerBox";
             this.EmployerBox.Size = new System.Drawing.Size(121, 23);
             this.EmployerBox.TabIndex = 2;
+            this.EmployerBox.SelectedIndexChanged += new System.EventHandler(this.EmployerBox_SelectedIndexChanged);
             // 
             // AspiranteBox
             // 
@@ -75,14 +74,6 @@
             this.AspiranteBox.Name = "AspiranteBox";
             this.AspiranteBox.Size = new System.Drawing.Size(121, 23);
             this.AspiranteBox.TabIndex = 3;
-            // 
-            // dolzjnostBox
-            // 
-            this.dolzjnostBox.FormattingEnabled = true;
-            this.dolzjnostBox.Location = new System.Drawing.Point(209, 143);
-            this.dolzjnostBox.Name = "dolzjnostBox";
-            this.dolzjnostBox.Size = new System.Drawing.Size(121, 23);
-            this.dolzjnostBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -105,27 +96,19 @@
             // CommissionUpDown
             // 
             this.CommissionUpDown.Location = new System.Drawing.Point(209, 182);
+            this.CommissionUpDown.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.CommissionUpDown.Name = "CommissionUpDown";
             this.CommissionUpDown.Size = new System.Drawing.Size(120, 23);
             this.CommissionUpDown.TabIndex = 7;
             // 
-            // dataTimeBegin
-            // 
-            this.dataTimeBegin.Location = new System.Drawing.Point(12, 260);
-            this.dataTimeBegin.Name = "dataTimeBegin";
-            this.dataTimeBegin.Size = new System.Drawing.Size(200, 23);
-            this.dataTimeBegin.TabIndex = 8;
-            // 
-            // dateTimeEnd
-            // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(249, 260);
-            this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(200, 23);
-            this.dateTimeEnd.TabIndex = 9;
-            // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(12, 314);
+            this.SaveBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.SaveBtn.Location = new System.Drawing.Point(12, 266);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(437, 31);
             this.SaveBtn.TabIndex = 10;
@@ -133,17 +116,22 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dolzhBox
+            // 
+            this.dolzhBox.Location = new System.Drawing.Point(209, 143);
+            this.dolzhBox.Name = "dolzhBox";
+            this.dolzhBox.Size = new System.Drawing.Size(121, 23);
+            this.dolzhBox.TabIndex = 11;
+            // 
             // SettlementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 371);
+            this.ClientSize = new System.Drawing.Size(466, 330);
+            this.Controls.Add(this.dolzhBox);
             this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.dateTimeEnd);
-            this.Controls.Add(this.dataTimeBegin);
             this.Controls.Add(this.CommissionUpDown);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dolzjnostBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.AspiranteBox);
             this.Controls.Add(this.EmployerBox);
@@ -164,12 +152,10 @@
         private Label label2;
         private ComboBox EmployerBox;
         private ComboBox AspiranteBox;
-        private ComboBox dolzjnostBox;
         private Label label3;
         private Label label4;
         private NumericUpDown CommissionUpDown;
-        private DateTimePicker dataTimeBegin;
-        private DateTimePicker dateTimeEnd;
         private Button SaveBtn;
+        private TextBox dolzhBox;
     }
 }

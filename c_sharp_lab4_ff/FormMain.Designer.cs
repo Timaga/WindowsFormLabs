@@ -42,24 +42,21 @@
             this.редактироватьToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.RabPage = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listViewOffers = new System.Windows.Forms.ListView();
-            this.listViewAspirante = new System.Windows.Forms.ListView();
             this.listViewEmployer = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listViewAspirante = new System.Windows.Forms.ListView();
             this.SecondName = new System.Windows.Forms.ColumnHeader();
             this.FirstName = new System.Windows.Forms.ColumnHeader();
             this.LastName = new System.Windows.Forms.ColumnHeader();
+            this.Qualification = new System.Windows.Forms.ColumnHeader();
             this.Activity = new System.Windows.Forms.ColumnHeader();
             this.OtherDATA = new System.Windows.Forms.ColumnHeader();
             this.Wage = new System.Windows.Forms.ColumnHeader();
-            this.Qualification = new System.Windows.Forms.ColumnHeader();
-            this.Emlpoyer = new System.Windows.Forms.ColumnHeader();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listViewOffers = new System.Windows.Forms.ListView();
             this.Aspirant = new System.Windows.Forms.ColumnHeader();
+            this.Emlpoyer = new System.Windows.Forms.ColumnHeader();
             this.Должность = new System.Windows.Forms.ColumnHeader();
             this.Комиссионные = new System.Windows.Forms.ColumnHeader();
             this.menuStrip1.SuspendLayout();
@@ -104,6 +101,7 @@
             this.работодательToolStripMenuItem.Name = "работодательToolStripMenuItem";
             this.работодательToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.работодательToolStripMenuItem.Text = "Работодатель";
+            this.работодательToolStripMenuItem.Click += new System.EventHandler(this.работодательToolStripMenuItem_Click);
             // 
             // создатьToolStripMenuItem1
             // 
@@ -131,14 +129,14 @@
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // редактироватьToolStripMenuItem
             // 
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
             this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.редактироватьToolStripMenuItem_Click);
             // 
@@ -163,6 +161,7 @@
             this.редактироватьToolStripMenuItem2.Name = "редактироватьToolStripMenuItem2";
             this.редактироватьToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.редактироватьToolStripMenuItem2.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem2.Click += new System.EventHandler(this.редактироватьToolStripMenuItem2_Click);
             // 
             // RabPage
             // 
@@ -186,6 +185,25 @@
             this.tabPage1.Text = "Работодатель";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // listViewEmployer
+            // 
+            this.listViewEmployer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listViewEmployer.FullRowSelect = true;
+            this.listViewEmployer.GridLines = true;
+            this.listViewEmployer.Location = new System.Drawing.Point(6, 4);
+            this.listViewEmployer.Name = "listViewEmployer";
+            this.listViewEmployer.Size = new System.Drawing.Size(631, 244);
+            this.listViewEmployer.TabIndex = 1;
+            this.listViewEmployer.UseCompatibleStateImageBehavior = false;
+            this.listViewEmployer.View = System.Windows.Forms.View.Details;
+            this.listViewEmployer.SelectedIndexChanged += new System.EventHandler(this.listViewEmployer_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Имя ";
+            this.columnHeader1.Width = 300;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.listViewAspirante);
@@ -196,34 +214,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Соискатель";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.listViewOffers);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(643, 253);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Сделка";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // listViewOffers
-            // 
-            this.listViewOffers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Emlpoyer,
-            this.Aspirant,
-            this.Должность,
-            this.Комиссионные});
-            this.listViewOffers.FullRowSelect = true;
-            this.listViewOffers.GridLines = true;
-            this.listViewOffers.Location = new System.Drawing.Point(6, 6);
-            this.listViewOffers.Name = "listViewOffers";
-            this.listViewOffers.Size = new System.Drawing.Size(631, 244);
-            this.listViewOffers.TabIndex = 0;
-            this.listViewOffers.UseCompatibleStateImageBehavior = false;
-            this.listViewOffers.View = System.Windows.Forms.View.Details;
-            this.listViewOffers.SelectedIndexChanged += new System.EventHandler(this.listViewOffers_SelectedIndexChanged);
             // 
             // listViewAspirante
             // 
@@ -244,42 +234,6 @@
             this.listViewAspirante.UseCompatibleStateImageBehavior = false;
             this.listViewAspirante.View = System.Windows.Forms.View.Details;
             // 
-            // listViewEmployer
-            // 
-            this.listViewEmployer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewEmployer.FullRowSelect = true;
-            this.listViewEmployer.GridLines = true;
-            this.listViewEmployer.Location = new System.Drawing.Point(6, 4);
-            this.listViewEmployer.Name = "listViewEmployer";
-            this.listViewEmployer.Size = new System.Drawing.Size(631, 244);
-            this.listViewEmployer.TabIndex = 1;
-            this.listViewEmployer.UseCompatibleStateImageBehavior = false;
-            this.listViewEmployer.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Имя ";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = " Адресс";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Телефон";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Вид деятельности";
-            this.columnHeader4.Width = 150;
-            // 
             // SecondName
             // 
             this.SecondName.Text = "Фамилия";
@@ -294,6 +248,12 @@
             // 
             this.LastName.Text = "Отчество";
             this.LastName.Width = 100;
+            // 
+            // Qualification
+            // 
+            this.Qualification.DisplayIndex = 6;
+            this.Qualification.Text = "Квалификация";
+            this.Qualification.Width = 100;
             // 
             // Activity
             // 
@@ -313,21 +273,45 @@
             this.Wage.Text = "Зарплата";
             this.Wage.Width = 100;
             // 
-            // Qualification
+            // tabPage3
             // 
-            this.Qualification.DisplayIndex = 6;
-            this.Qualification.Text = "Квалификация";
-            this.Qualification.Width = 100;
+            this.tabPage3.Controls.Add(this.listViewOffers);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(643, 253);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Сделка";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // Emlpoyer
+            // listViewOffers
             // 
-            this.Emlpoyer.Text = "Работодатель";
-            this.Emlpoyer.Width = 150;
+            this.listViewOffers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Aspirant,
+            this.Emlpoyer,
+            this.Должность,
+            this.Комиссионные});
+            this.listViewOffers.FullRowSelect = true;
+            this.listViewOffers.GridLines = true;
+            this.listViewOffers.Location = new System.Drawing.Point(6, 6);
+            this.listViewOffers.Name = "listViewOffers";
+            this.listViewOffers.Size = new System.Drawing.Size(631, 244);
+            this.listViewOffers.TabIndex = 0;
+            this.listViewOffers.UseCompatibleStateImageBehavior = false;
+            this.listViewOffers.View = System.Windows.Forms.View.Details;
+            this.listViewOffers.SelectedIndexChanged += new System.EventHandler(this.listViewOffers_SelectedIndexChanged);
             // 
             // Aspirant
             // 
+            this.Aspirant.DisplayIndex = 1;
             this.Aspirant.Text = "Соискатель";
             this.Aspirant.Width = 150;
+            // 
+            // Emlpoyer
+            // 
+            this.Emlpoyer.DisplayIndex = 0;
+            this.Emlpoyer.Text = "Работодатель";
+            this.Emlpoyer.Width = 150;
             // 
             // Должность
             // 
@@ -383,9 +367,6 @@
         private TabPage tabPage3;
         private ListView listViewOffers;
         private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
         private ColumnHeader SecondName;
         private ColumnHeader FirstName;
         private ColumnHeader LastName;

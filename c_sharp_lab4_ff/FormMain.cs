@@ -12,7 +12,7 @@ namespace c_sharp_lab4_ff
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+       
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -22,39 +22,75 @@ namespace c_sharp_lab4_ff
 
         private void ÒÓÁ‰‡Ú¸ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            _Employer= new Employer();
-            Employers formClient = new Employers(_Employer);
+            var emp = new Employer();
+            Employers formClient = new Employers(emp);
             if (formClient.ShowDialog() == DialogResult.OK)
             {
-                _Employer = formClient.Employer;
+                Recruting.EmployersMap.Add(emp.EmployerId, emp);
+                UpdateEmployerList();
             }
+           
         }
 
         private void Â‰‡ÍÚËÓ‚‡Ú¸ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Employers formClient = new Employers(_Employer);
+            var employer = listViewEmployer.SelectedItems[0].Tag as Employer;
+            Employers formClient = new Employers(employer);
             if (formClient.ShowDialog() == DialogResult.OK)
             {
-                _Employer = formClient.Employer;
+                UpdateEmployerList();
+            }
+        }
+
+        private void UpdateEmployerList()
+        {
+            listViewEmployer.Items.Clear();
+            foreach (var item in Recruting.EmployersMap)
+            {
+                var client = item.Value;
+                var listViewItem = new ListViewItem
+                {
+                    Tag = client,
+                    Text = client.ToString()
+                };
+                listViewEmployer.Items.Add(listViewItem);
             }
         }
 
         private void ÒÓÁ‰‡Ú¸ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _Aspirante = new Aspirante();
-            AspiranteForm aspiranteForm = new AspiranteForm(_Aspirante);
-            if (aspiranteForm.ShowDialog() == DialogResult.OK)
+           
+            var room = new Aspirante();
+           AspiranteForm formRoom = new AspiranteForm(room);
+            if (formRoom.ShowDialog() == DialogResult.OK)
             {
-                _Aspirante = aspiranteForm.Aspirante ;
+                Recruting.Aspirants.Add(room.AspiranteId, room);
+                UpdateRoomsList();
             }
         }
 
         private void Â‰‡ÍÚËÓ‚‡Ú¸ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AspiranteForm aspiranteForm = new AspiranteForm(_Aspirante);
-            if (aspiranteForm.ShowDialog() == DialogResult.OK)
+            var room = listViewAspirante.SelectedItems[0].Tag as Aspirante;
+            AspiranteForm formRoom = new AspiranteForm(room);
+            if (formRoom.ShowDialog() == DialogResult.OK)
             {
-                _Aspirante = aspiranteForm.Aspirante;
+                UpdateRoomsList();
+            }
+        }
+
+        private void UpdateRoomsList()
+        {
+            listViewAspirante.Items.Clear();
+            foreach (var item in Recruting.Aspirants)
+            {
+                var room = item.Value;
+                var listViewItem = new ListViewItem
+                {
+                    Tag = room,
+                    Text = room.ToString()
+                };
+                listViewAspirante.Items.Add(listViewItem);
             }
         }
 
@@ -64,18 +100,13 @@ namespace c_sharp_lab4_ff
            SettlementForm formSettlement = new SettlementForm(settlement);
             if (formSettlement.ShowDialog() == DialogResult.OK)
             {
-                Recruting.Settlements.Add(settlement);
+               Recruting.Settlements.Add(settlement);
                 UpdateSettlementList();
             }
         }
         private void editSettlementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var settlement = listViewOffers.SelectedItems[0].Tag as Settlement;
-            SettlementForm formSettlement = new SettlementForm(settlement);
-            if (formSettlement.ShowDialog() == DialogResult.OK)
-            {
-                UpdateSettlementList();
-            }
+            
         }
         private void UpdateSettlementList()
         {
@@ -87,18 +118,42 @@ namespace c_sharp_lab4_ff
                     Tag = settlement,
                     Text = settlement.Aspirante.ToString()
                 };
-                listViewItem.SubItems.Add(settlement.Commission.ToString());
-                listViewItem.SubItems.Add(settlement.Aspirante.ToString());
+                
                 listViewItem.SubItems.Add(settlement.Employer.ToString());
-                listViewItem.SubItems.Add(settlement.StartDate.ToShortDateString());
-                listViewItem.SubItems.Add(settlement.EndDate.ToShortDateString());
+                
+                listViewItem.SubItems.Add(settlement.post.ToString());
+                listViewItem.SubItems.Add(settlement.Commission.ToString());
                 listViewOffers.Items.Add(listViewItem);
+
+                /*  listViewItem.SubItems.Add(settlement.StartDate.ToShortDateString());
+                  listViewItem.SubItems.Add(settlement.EndDate.ToShortDateString());*/
+
             }
         }
 
         private void listViewOffers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listViewEmployer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ‡·ÓÚÓ‰‡ÚÂÎ¸ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Â‰‡ÍÚËÓ‚‡Ú¸ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var settlement = listViewOffers.SelectedItems[0].Tag as Settlement;
+            SettlementForm formSettlement = new SettlementForm(settlement);
+            if (formSettlement.ShowDialog() == DialogResult.OK)
+            {
+                UpdateSettlementList();
+            }
         }
     }
 }

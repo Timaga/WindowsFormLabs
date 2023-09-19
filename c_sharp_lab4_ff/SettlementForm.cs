@@ -22,27 +22,37 @@ namespace c_sharp_lab4_ff
         {
             InitializeComponent();
             Settlement = settlement;
-           /* foreach (var item in Hotel.Clients)
+            foreach (var item in Recruting.EmployersMap)
             {
                 var client = item.Value;
-                comboBoxClient.Items.Add(client);
+                EmployerBox.Items.Add(client);
             }
-            foreach (var item in Hotel.Rooms)
+            foreach (var item in Recruting.Aspirants)
             {
                 var room = item.Value;
-                comboBoxRoom.Items.Add(room);
+                AspiranteBox.Items.Add(room);
             }
-            comboBoxClient.SelectedItem = settlement.Client;
-            comboBoxRoom.SelectedItem = settlement.Room;
-            dateTimePickerStartDate.Value = settlement.StartDate;
-            dateTimePickerEndDate.Value = settlement.EndDate;*/
+            EmployerBox.SelectedItem = settlement.Employer;
+            AspiranteBox.SelectedItem = settlement.Aspirante;
+            dolzhBox.Text = settlement.post;
+            CommissionUpDown.Value = settlement.Commission;
+           
         }
         private void button1_Click(object sender, EventArgs e)
+        {
+            Settlement.Aspirante = AspiranteBox.SelectedItem as Aspirante;
+            Settlement.Employer = EmployerBox.SelectedItem as Employer;
+            Settlement.Commission = (int)CommissionUpDown.Value;
+            Settlement.post = dolzhBox.Text;
+           
+        }
+
+        private void SettlementForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void SettlementForm_Load(object sender, EventArgs e)
+        private void EmployerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

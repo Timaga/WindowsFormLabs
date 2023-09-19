@@ -15,7 +15,7 @@ namespace c_sharp_lab4
         /// <summary>
         /// Словарь комнат
         /// </summary>
-        public static Dictionary<int, Employer> Employers { get; } = new Dictionary<int, Employer>();
+        public static Dictionary<int, Employer> EmployersMap { get; } = new Dictionary<int, Employer>();
         /// <summary>
         /// Спосок поселений
         /// </summary>

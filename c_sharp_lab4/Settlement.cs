@@ -36,7 +36,9 @@ namespace c_sharp_lab4
             {
                 if (Employer == null) return false;
                 if (Aspirante == null) return false;
-                if (EndDate <= StartDate) return false;
+               
+                if (post == null) return false;
+                //if (EndDate <= StartDate) return false;
                 return true;
             }
         }
@@ -46,18 +48,20 @@ namespace c_sharp_lab4
 
         }
 
-        public Settlement(Employer employer, Aspirante aspirante, DateTime startDate, DateTime endDate)
+        public Settlement(Employer employer, Aspirante aspirante,int commission,string Post, DateTime startDate, DateTime endDate)
         {
             Employer = employer;
             Aspirante = aspirante;
+            Commission = commission;
+            post = Post;
             StartDate = startDate;
             EndDate = endDate;
         }
 
         public override string ToString()
         {
-            return "fad";
-          //  return $"Клиент - {Client}\r\nНомер - {Room}\r\nПериод: {StartDate}-{EndDate}\r\n";
+            
+            return $"Работодатель {Employer}\r\nСоискатель - {Aspirante}\r\nДолжность - {post}\r\nКомиссионные - {Commission}";
         }
     }
 }

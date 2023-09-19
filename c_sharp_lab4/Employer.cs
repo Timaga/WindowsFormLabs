@@ -12,6 +12,18 @@ namespace c_sharp_lab4
       /// </summary>
         public string Name { get; set; } = "Tim";
 
+
+        public int EmployerId { get; }
+        private static int _newEmployerId;
+        private static int NewEmployerId
+        {
+            get
+            {
+                _newEmployerId++;
+                return _newEmployerId;
+            }
+        }
+
         /// <summary>
         /// Адресс
         /// </summary>
@@ -33,7 +45,7 @@ namespace c_sharp_lab4
             }
         }
 
-        public Employer() { }
+        public Employer() { EmployerId = NewEmployerId; }
          
         public Employer(string name, string adress, string phoneNumber, string activity)
         {
@@ -41,6 +53,7 @@ namespace c_sharp_lab4
             Adress = adress;
             PhoneNumber = phoneNumber;
             Activity = activity;
+            EmployerId = NewEmployerId;
         }
 
         public override string ToString()

@@ -8,7 +8,19 @@ using System.Xml.Linq;
 namespace c_sharp_lab4
 {
     public class Aspirante : IValidatable
+
+
     {
+        public int AspiranteId { get; }
+        private static int _newAspiranteId;
+        private static int NewAspiranteId
+        {
+            get
+            {
+                _newAspiranteId++;
+                return _newAspiranteId;
+            }
+        }
         /// <summary>
         /// Фамилия
         /// </summary>
@@ -47,10 +59,14 @@ namespace c_sharp_lab4
             }
         }
 
-        public Aspirante() { }
-       
+        public Aspirante()
+        {
+            AspiranteId = NewAspiranteId;
+        }
+
         Aspirante(string secondName, string firstName, string lastName, string qualification, string activity, string othereData, int wage)
         {
+            AspiranteId = NewAspiranteId;
             SecondName = secondName;
             FirstName = firstName;
             LastName = lastName;

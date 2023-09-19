@@ -31,7 +31,7 @@ namespace c_sharp_lab4_ff
            PhoneBox.Text = Employer.PhoneNumber;
             activityBox.Text = Employer.Activity;
 
-            activityBox.Text = Employer.Adress;
+           adressBox.Text = Employer.Adress;
            
         }
         private void button1_Click(object sender, EventArgs e)
