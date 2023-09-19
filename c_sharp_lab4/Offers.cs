@@ -25,19 +25,19 @@ namespace c_sharp_lab4
         /// <summary>
         /// Комиссионные
         /// </summary>
-        public string Commission { get; set; } = "5135";
+        public int Commission { get; set; } = 5355;
 
         public bool IsValid
         {
             get
             {
-                return !String.IsNullOrEmpty(Employer) && !String.IsNullOrEmpty(Aspirante) && !String.IsNullOrEmpty(post) && !String.IsNullOrEmpty(Commission);
+                return !String.IsNullOrEmpty(Employer) && !String.IsNullOrEmpty(Aspirante) && !String.IsNullOrEmpty(post) ;
             }
         }
 
         public Offers() { }
 
-        public Offers(string name, string adress, string phoneNumber, string activity)
+        public Offers(string name, string adress, int phoneNumber, string activity)
         {
             Employer = name;
             post = adress;

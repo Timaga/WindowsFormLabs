@@ -57,5 +57,48 @@ namespace c_sharp_lab4_ff
                 _Aspirante = aspiranteForm.Aspirante;
             }
         }
+
+        private void ‰Ó·‡‚ËÚ¸ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var settlement = new Settlement();
+           SettlementForm formSettlement = new SettlementForm(settlement);
+            if (formSettlement.ShowDialog() == DialogResult.OK)
+            {
+                Recruting.Settlements.Add(settlement);
+                UpdateSettlementList();
+            }
+        }
+        private void editSettlementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var settlement = listViewOffers.SelectedItems[0].Tag as Settlement;
+            SettlementForm formSettlement = new SettlementForm(settlement);
+            if (formSettlement.ShowDialog() == DialogResult.OK)
+            {
+                UpdateSettlementList();
+            }
+        }
+        private void UpdateSettlementList()
+        {
+            listViewOffers.Items.Clear();
+            foreach (var settlement in Recruting.Settlements)
+            {
+                var listViewItem = new ListViewItem
+                {
+                    Tag = settlement,
+                    Text = settlement.Aspirante.ToString()
+                };
+                listViewItem.SubItems.Add(settlement.Commission.ToString());
+                listViewItem.SubItems.Add(settlement.Aspirante.ToString());
+                listViewItem.SubItems.Add(settlement.Employer.ToString());
+                listViewItem.SubItems.Add(settlement.StartDate.ToShortDateString());
+                listViewItem.SubItems.Add(settlement.EndDate.ToShortDateString());
+                listViewOffers.Items.Add(listViewItem);
+            }
+        }
+
+        private void listViewOffers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
