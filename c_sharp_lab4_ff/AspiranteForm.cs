@@ -13,25 +13,30 @@ namespace c_sharp_lab4_ff
 {
     public partial class AspiranteForm : Form
     {
-        public AspiranteForm()
-        {
-            InitializeComponent();
-        }
 
-        public Aspirante Aspirante { get; }
-
-        public AspiranteForm(Aspirante aspirante)
+        private Aspirante _aspirante;
+        
+       
+        public Aspirante Aspirante
         {
-            InitializeComponent();
-            Aspirante = aspirante;
-            SecondNameBox.Text = Aspirante.SecondName;
-            FirstNameBox.Text = Aspirante.FirstName;
-            LastNameBox.Text = Aspirante.LastName;
-            Qualification_box.Text = Aspirante.Qualification;
-            activityBox.Text = Aspirante.Activity;
-            OthereData_Box.Text = Aspirante.OthereData;
-            pay.Value = Aspirante.Wage;
+            get
+            {
+                return _aspirante;
+            }
+            set
+            {
+                _aspirante = value;
+                SecondNameBox.Text = Aspirante.SecondName;
+                FirstNameBox.Text = Aspirante.FirstName;
+                LastNameBox.Text = Aspirante.LastName;
+                Qualification_box.Text = Aspirante.Qualification;
+                activityBox.Text = Aspirante.Activity;
+                OthereData_Box.Text = Aspirante.OthereData;
+                pay.Value = Aspirante.Wage;
+            }
         }
+        public AspiranteForm() => InitializeComponent();
+
         private void label1_Click(object sender, EventArgs e)
         {
 

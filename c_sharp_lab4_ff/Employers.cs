@@ -18,21 +18,22 @@ namespace c_sharp_lab4_ff
         {
             InitializeComponent();
         }
-        public Employer Employer { get; }
+        private Employer _employer;
+        public Employer Employer
+        {
+            get { return _employer; }
+            set
+            {
+                _employer = value;
+                NameBox.Text = Employer.Name;
+                PhoneBox.Text = Employer.PhoneNumber;
+                activityBox.Text = Employer.Activity;
+                adressBox.Text = Employer.Adress;
+            }
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-        public Employers(Employer employer)
-        {
-            InitializeComponent();
-            Employer = employer;
-            NameBox.Text = Employer.Name;
-           PhoneBox.Text = Employer.PhoneNumber;
-            activityBox.Text = Employer.Activity;
-
-           adressBox.Text = Employer.Adress;
-           
         }
         private void button1_Click(object sender, EventArgs e)
         {

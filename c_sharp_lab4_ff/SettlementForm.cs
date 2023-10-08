@@ -13,30 +13,38 @@ namespace c_sharp_lab4_ff
 {
     public partial class SettlementForm : Form
     {
+        private readonly Recruting _recruting = Recruting.Instance;
+        private Settlement _settlement;
+        public Settlement Settlement
+        {
+            get { return _settlement; }
+            set
+            {
+                _settlement = value;
+                EmployerBox.SelectedItem = _settlement.Employer;
+                AspiranteBox.SelectedItem = _settlement.Aspirante;
+                dolzhBox.Text = _settlement.post;
+                CommissionUpDown.Value = _settlement.Commission; 
+            }
+        }
+
         public SettlementForm()
         {
             InitializeComponent();
-        }
-        public Settlement Settlement { get; }
-        public SettlementForm(Settlement settlement)
-        {
-            InitializeComponent();
-            Settlement = settlement;
-            foreach (var item in Recruting.EmployersMap)
+            _recruting.AspiranteAdded += _recruting_AspiranteAdded;
+            _recruting.AspiranteRemoved += _recruting_AspiranteRemoved;
+            _recruting.EmployerAdded += _recruting_EmployerAdded;
+            _recruting.EmployerRemoved += _recruting_EmployerRemoved;
+            foreach (var item in _recruting.Employers)
             {
-                var client = item.Value;
-                EmployerBox.Items.Add(client);
+               
+                EmployerBox.Items.Add(item);
             }
-            foreach (var item in Recruting.Aspirants)
+            foreach (var item in _recruting.Aspirantes)
             {
-                var room = item.Value;
-                AspiranteBox.Items.Add(room);
+                
+                AspiranteBox.Items.Add(item);
             }
-            EmployerBox.SelectedItem = settlement.Employer;
-            AspiranteBox.SelectedItem = settlement.Aspirante;
-            dolzhBox.Text = settlement.post;
-            CommissionUpDown.Value = settlement.Commission;
-           
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,6 +53,43 @@ namespace c_sharp_lab4_ff
             Settlement.Commission = (int)CommissionUpDown.Value;
             Settlement.post = dolzhBox.Text;
            
+        }
+        private void _recruting_EmployerRemoved(object sender, EventArgs e)
+        {
+            int key = (int)sender;
+            for (int i = 0; i < EmployerBox.Items.Count; i++)
+            {
+                var room = EmployerBox.Items[i] as Employer;
+                if (room?.EmployerId == key)
+                {
+                    EmployerBox.Items.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
+        private void _recruting_EmployerAdded(object sender, EventArgs e)
+        {
+            EmployerBox.Items.Add(sender);
+        }
+
+        private void _recruting_AspiranteRemoved(object sender, EventArgs e)
+        {
+            int key = (int)sender;
+            for (int i = 0; i < AspiranteBox.Items.Count; i++)
+            {
+                var client = AspiranteBox.Items[i] as Aspirante;
+                if (client?.AspiranteId == key)
+                {
+                    AspiranteBox.Items.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
+        private void _recruting_AspiranteAdded(object sender, EventArgs e)
+        {
+            AspiranteBox.Items.Add(sender);
         }
 
         private void SettlementForm_Load(object sender, EventArgs e)

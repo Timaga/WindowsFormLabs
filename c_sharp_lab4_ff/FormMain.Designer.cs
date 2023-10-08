@@ -46,13 +46,7 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listViewAspirante = new System.Windows.Forms.ListView();
-            this.SecondName = new System.Windows.Forms.ColumnHeader();
-            this.FirstName = new System.Windows.Forms.ColumnHeader();
-            this.LastName = new System.Windows.Forms.ColumnHeader();
-            this.Qualification = new System.Windows.Forms.ColumnHeader();
-            this.Activity = new System.Windows.Forms.ColumnHeader();
-            this.OtherDATA = new System.Windows.Forms.ColumnHeader();
-            this.Wage = new System.Windows.Forms.ColumnHeader();
+            this.Данные = new System.Windows.Forms.ColumnHeader();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.listViewOffers = new System.Windows.Forms.ListView();
             this.Aspirant = new System.Windows.Forms.ColumnHeader();
@@ -152,14 +146,14 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // редактироватьToolStripMenuItem2
             // 
             this.редактироватьToolStripMenuItem2.Name = "редактироватьToolStripMenuItem2";
-            this.редактироватьToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.редактироватьToolStripMenuItem2.Size = new System.Drawing.Size(154, 22);
             this.редактироватьToolStripMenuItem2.Text = "Редактировать";
             this.редактироватьToolStripMenuItem2.Click += new System.EventHandler(this.редактироватьToolStripMenuItem2_Click);
             // 
@@ -198,6 +192,8 @@
             this.listViewEmployer.UseCompatibleStateImageBehavior = false;
             this.listViewEmployer.View = System.Windows.Forms.View.Details;
             this.listViewEmployer.SelectedIndexChanged += new System.EventHandler(this.listViewEmployer_SelectedIndexChanged);
+            this.listViewEmployer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewEmployer_KeyUp);
+            this.listViewEmployer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewEmployer_KeyUp);
             // 
             // columnHeader1
             // 
@@ -218,13 +214,7 @@
             // listViewAspirante
             // 
             this.listViewAspirante.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.SecondName,
-            this.FirstName,
-            this.LastName,
-            this.Qualification,
-            this.Activity,
-            this.OtherDATA,
-            this.Wage});
+            this.Данные});
             this.listViewAspirante.FullRowSelect = true;
             this.listViewAspirante.GridLines = true;
             this.listViewAspirante.Location = new System.Drawing.Point(6, 4);
@@ -233,45 +223,13 @@
             this.listViewAspirante.TabIndex = 1;
             this.listViewAspirante.UseCompatibleStateImageBehavior = false;
             this.listViewAspirante.View = System.Windows.Forms.View.Details;
+            this.listViewAspirante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewAspirante_KeyUp);
+            this.listViewAspirante.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewAspirante_KeyUp);
             // 
-            // SecondName
+            // Данные
             // 
-            this.SecondName.Text = "Фамилия";
-            this.SecondName.Width = 100;
-            // 
-            // FirstName
-            // 
-            this.FirstName.Text = "Имя";
-            this.FirstName.Width = 100;
-            // 
-            // LastName
-            // 
-            this.LastName.Text = "Отчество";
-            this.LastName.Width = 100;
-            // 
-            // Qualification
-            // 
-            this.Qualification.DisplayIndex = 6;
-            this.Qualification.Text = "Квалификация";
-            this.Qualification.Width = 100;
-            // 
-            // Activity
-            // 
-            this.Activity.DisplayIndex = 3;
-            this.Activity.Text = "Вид деятельности";
-            this.Activity.Width = 100;
-            // 
-            // OtherDATA
-            // 
-            this.OtherDATA.DisplayIndex = 4;
-            this.OtherDATA.Text = "Другие данные";
-            this.OtherDATA.Width = 150;
-            // 
-            // Wage
-            // 
-            this.Wage.DisplayIndex = 5;
-            this.Wage.Text = "Зарплата";
-            this.Wage.Width = 100;
+            this.Данные.Text = "Данные";
+            this.Данные.Width = 400;
             // 
             // tabPage3
             // 
@@ -300,6 +258,8 @@
             this.listViewOffers.UseCompatibleStateImageBehavior = false;
             this.listViewOffers.View = System.Windows.Forms.View.Details;
             this.listViewOffers.SelectedIndexChanged += new System.EventHandler(this.listViewOffers_SelectedIndexChanged);
+            this.listViewOffers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewSettlement_KeyUp);
+            this.listViewOffers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewSettlement_KeyUp);
             // 
             // Aspirant
             // 
@@ -367,13 +327,7 @@
         private TabPage tabPage3;
         private ListView listViewOffers;
         private ColumnHeader columnHeader1;
-        private ColumnHeader SecondName;
-        private ColumnHeader FirstName;
-        private ColumnHeader LastName;
-        private ColumnHeader Activity;
-        private ColumnHeader OtherDATA;
-        private ColumnHeader Wage;
-        private ColumnHeader Qualification;
+        private ColumnHeader Данные;
         private ColumnHeader Emlpoyer;
         private ColumnHeader Aspirant;
         private ColumnHeader Должность;
