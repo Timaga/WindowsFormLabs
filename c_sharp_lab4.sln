@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_sharp_lab4", "c_sharp_lab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_sharp_lab4_ff", "c_sharp_lab4_ff\c_sharp_lab4_ff.csproj", "{B96E7CDC-7B2D-4C22-9FF8-A1863B78969A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsControlLibraryOffers", "WinFormsControlLibraryOffers\WinFormsControlLibraryOffers.csproj", "{A93DCF65-3777-47E0-87AF-F7469CBF07A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B96E7CDC-7B2D-4C22-9FF8-A1863B78969A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B96E7CDC-7B2D-4C22-9FF8-A1863B78969A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B96E7CDC-7B2D-4C22-9FF8-A1863B78969A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A93DCF65-3777-47E0-87AF-F7469CBF07A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93DCF65-3777-47E0-87AF-F7469CBF07A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93DCF65-3777-47E0-87AF-F7469CBF07A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93DCF65-3777-47E0-87AF-F7469CBF07A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
