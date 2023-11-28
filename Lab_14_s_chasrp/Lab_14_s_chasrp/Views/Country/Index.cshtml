@@ -1,0 +1,95 @@
+﻿@model Lab_14_s_chasrp.Models.Models
+
+@{
+    ViewData["Title"] = "Country";
+}
+
+<h1>Country</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">capital</th>
+            <th scope="col">title</th>          
+            <th scope="col">ContinentName</th>       
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model.Countryes)
+        {
+            <tr>
+                <th scope="row">@department.id</th>
+                <td>
+                    @if (department.photo != null)
+                    {
+                        <img class="w-50 h-auto" src="data:image;base64,@Convert.ToBase64String(department.photo)"/>
+                    }
+                </td>
+                <td>@department.Capital</td>
+                <td>@department.title</td>
+                <td>@Model.Continents.FirstOrDefault(i => i.id == department.id)?.title</td>
+                <td>
+                    <form action="/Country/Delete/@department.id">
+                        <button type="submit" class="btn btn-danger m-1">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form action="/Country/Insert" enctype="multipart/form-data" method="post">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column">
+            <label class="m-3">Capital:</label>
+            <label class="m-3">Name:</label>
+            <label class="m-3">ContinentId:</label>
+            <label class="m-3">Image:</label>
+        </div>
+        <div class="d-flex flex-column w-100">           
+            <input class="form-control m-2" type="text" name="capital" required/>
+            <input class="form-control m-2" type="text" name="title" required/>
+            <select class="form-control m-2" name="continent_id" required>
+
+                @foreach (var faculty in Model.Continents)
+                {
+                    <option value="@faculty.id">@faculty.title</option>
+                }
+            </select>
+            <input class="form-control m-2" type="file" name="photo" required />
+        </div>
+    </div>
+    <button class="btn btn-success m-1 w-100" type="submit">Insert</button>
+</form>
+<form action="/Country/Update" enctype="multipart/form-data" method="post">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column">
+            <label class="m-3">Id:</label>
+            <label class="m-3">Capital:</label>
+            <label class="m-3">Name:</label>
+            <label class="m-3">ContinentId:</label>
+            <label class="m-3">Image:</label>
+        </div>
+        <div class="d-flex flex-column w-100">
+            <select class="form-control m-2" name="id" required>
+                @foreach (var department in Model.Countryes)
+                {
+                    <option value="@department.id">@department.id</option>
+                }
+            </select>          
+            <input class="form-control m-2" type="text" name="capital" required />
+            <input class="form-control m-2" type="text" name="title" required />
+            <select class="form-control m-2" name="continent_id" required>
+                @foreach (var faculty in Model.Continents)
+                {
+                    <option value="@faculty.id">@faculty.title</option>
+                }
+            </select>
+            <input class="form-control m-2" type="file" name="photo" required />
+        </div>
+    </div>
+    <button class="btn btn-secondary m-1 w-100" type="submit">Update</button> 
+</form>
+<form action="/Continent" enctype="multipart/form-data" method="post">
+    <button class="btn btn-info m-1 w-100" type="submit">Continents</button>
+</form>

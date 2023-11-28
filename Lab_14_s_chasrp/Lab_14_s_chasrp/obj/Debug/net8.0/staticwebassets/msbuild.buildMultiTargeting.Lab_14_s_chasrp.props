@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Lab_14_s_chasrp.props" />
+</Project>
