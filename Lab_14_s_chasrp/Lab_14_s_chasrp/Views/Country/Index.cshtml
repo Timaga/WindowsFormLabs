@@ -28,7 +28,7 @@
                 </td>
                 <td>@department.Capital</td>
                 <td>@department.title</td>
-                <td>@Model.Continents.FirstOrDefault(i => i.id == department.id)?.title</td>
+                <td>@Model.Continents.FirstOrDefault(i => i.id == department.ContinentId).title</td>
                 <td>
                     <form action="/Country/Delete/@department.id">
                         <button type="submit" class="btn btn-danger m-1">Delete</button>
